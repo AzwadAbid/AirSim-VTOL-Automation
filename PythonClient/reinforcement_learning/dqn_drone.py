@@ -32,10 +32,10 @@ model = DQN(
     env,
     learning_rate=0.00025,
     verbose=1,
-    batch_size=32,
+    batch_size=128,
     train_freq=4,
-    target_update_interval=10000,
-    learning_starts=10000,
+    target_update_interval=500,
+    learning_starts=1000,
     buffer_size=500000,
     max_grad_norm=10,
     exploration_fraction=0.1,
@@ -52,7 +52,7 @@ eval_callback = EvalCallback(
     n_eval_episodes=5,
     best_model_save_path=".",
     log_path=".",
-    eval_freq=10000,
+    eval_freq=1000,
 )
 callbacks.append(eval_callback)
 
